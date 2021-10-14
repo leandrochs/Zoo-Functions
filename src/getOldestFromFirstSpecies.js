@@ -6,7 +6,8 @@ function getOldestFromFirstSpecies(idParam) {
   let firstId = '';
   employees.forEach(({ id, responsibleFor }) => {
     if (id === idParam) {
-      firstId = responsibleFor[0];
+      const [first] = responsibleFor;
+      firstId = first;
     }
   });
 
@@ -20,4 +21,4 @@ function getOldestFromFirstSpecies(idParam) {
 
 module.exports = getOldestFromFirstSpecies;
 
-// getOldestFromFirstSpecies('4b40a139-d4dc-4f09-822d-ec25e819a5ad');
+getOldestFromFirstSpecies('4b40a139-d4dc-4f09-822d-ec25e819a5ad');
