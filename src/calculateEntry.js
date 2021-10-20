@@ -11,14 +11,12 @@ function countEntrants(entrants) {
 }
 
 function calculateEntry(entrants) {
-  let result = {};
-  if (entrants !== undefined && entrants.length > 0) {
+  if (entrants && entrants.length > 0) {
     const { child, adult, senior } = countEntrants(entrants);
-    result = child * childPriece + adult * adultPrice + senior * seniorPrice;
-  } else {
-    result = 0;
+    return (child * childPriece + adult * adultPrice + senior * seniorPrice);
   }
-  return result;
+
+  return 0;
 }
 
 module.exports = { calculateEntry, countEntrants };
